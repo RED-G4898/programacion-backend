@@ -20,6 +20,11 @@ class ProductManager {
             return;
         }
 
+        if (title === undefined || description === undefined || price === undefined || thumbnail === undefined || code === undefined || stock === undefined) {
+            console.log('Please fill all the fields');
+            return;
+        }
+
         if (this.products.length < 1) {
             this.products.push(new Product(1, title, description, price, thumbnail, code, stock));
             console.log('Product added');
