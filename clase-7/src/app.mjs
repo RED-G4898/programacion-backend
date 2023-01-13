@@ -8,7 +8,11 @@ const productManager = new ProductManager("./assets/data/products.json");
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/productos", (req, res) => {
-    res.json(productManager.getProducts());
+    let products = productManager.getProducts();
+    if(req.query.limit){
+        products = products.slice(0, req.query.limit);
+    }
+    res.json(products);
 });
 
 app.get("/productos/:id", (req, res) => {
