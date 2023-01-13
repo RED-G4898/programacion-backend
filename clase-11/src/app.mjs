@@ -38,9 +38,7 @@ socketServer.on("connection", socket => {
     socket.on("add", (data) => {
         try {
             productManager.addProduct(data);
-            // res.sendStatus(200);
         } catch (err) {
-            // res.status(500).send(err);
         }
     });
 
@@ -48,9 +46,7 @@ socketServer.on("connection", socket => {
         try {
             const ID = parseInt(data);
             productManager.deleteProduct(ID);
-            // res.sendStatus(200);
         } catch (err) {
-            // res.status(500).send(err);
         }
-    }); 
+    });
 });
