@@ -12,7 +12,7 @@ import __dirname from "./utils.mjs";
 const productManager = new ProductManager(path.resolve(__dirname, "./assets/data/products.json"));
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 const httpServer = app.listen(PORT, () => console.log(`Servidor escuchando en http://localhost:${PORT}`));
 const socketServer = new Server(httpServer);
 
